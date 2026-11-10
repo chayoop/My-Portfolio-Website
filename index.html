@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ชื่อ นามสกุล | ผลงานและโปรไฟล์</title>
+<meta name="description" content="พอร์ตโฟลิโอของ ชื่อ นามสกุล">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --ink:#1b1f2a; --muted:#5f6675; --line:#e2e5ec;
+  --accent:#5b3df5; --accent-soft:#ebe8ff; --accent-ink:#ffffff;
+  --c1:#dfe9ff; --c2:#ffe3d6; --c3:#d9f2e6; --c4:#f6e3f5;
+  --head:"Anuphan","Noto Sans Thai",system-ui,sans-serif;
+  --body:"Noto Sans Thai","Anuphan",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#12141b;--surface:#1a1d27;--ink:#eef0f6;--muted:#a0a7b8;--line:#2b3040;
+  --accent:#9b87ff;--accent-soft:#2a2547;--accent-ink:#12141b;
+  --c1:#25304d;--c2:#4a3028;--c3:#243d33;--c4:#432a42}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.8;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.25}
+
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:28px;height:64px}
+nav b{font-family:var(--head);font-size:1.05rem;margin-right:auto}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+@media(max-width:560px){nav a.hide{display:none}}
+
+.hero{padding:88px 0 72px;display:grid;grid-template-columns:1fr 220px;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.2rem);font-weight:700;letter-spacing:-.01em;margin-bottom:20px}
+.hero p{color:var(--muted);max-width:50ch;margin:0 0 28px;font-size:1.1rem}
+.status{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);border-radius:999px;padding:4px 14px;font-size:.9rem;margin-bottom:22px}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#22b573}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-weight:500;font-size:.98rem;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.main:hover{filter:brightness(1.1);background:var(--accent);color:var(--accent-ink)}
+.avatar{width:220px;height:220px;border-radius:50%;background:var(--c1);display:grid;place-items:center;overflow:hidden;font:700 4rem var(--head);color:var(--accent)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:56px}.avatar{width:120px;height:120px;font-size:2.2rem;order:-1}}
+
+section{padding:72px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.head h2{font-size:clamp(1.7rem,4vw,2.2rem)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:500 .9rem var(--body);padding:6px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+.card{display:block;text-decoration:none;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,25,45,.12)}
+.card[hidden]{display:none}
+.thumb{aspect-ratio:16/10;position:relative;overflow:hidden;display:grid;place-items:center}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb span{font:600 .95rem var(--head);color:var(--muted);padding:8px 16px;border-radius:999px;background:color-mix(in srgb,var(--surface) 70%,transparent)}
+.t1{background:var(--c1)}.t2{background:var(--c2)}.t3{background:var(--c3)}.t4{background:var(--c4)}
+.info{padding:20px 22px 24px}
+.info h3{font-size:1.15rem;margin-bottom:6px}
+.info p{margin:0 0 14px;color:var(--muted);font-size:.95rem;line-height:1.7}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{font-size:.8rem;padding:1px 10px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+@media(max-width:760px){.about{grid-template-columns:1fr;gap:40px}}
+.about h3{font-size:1.15rem;margin-bottom:16px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px;padding:0;list-style:none}
+.pills li{padding:5px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:.95rem}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{padding:0 0 22px 22px;border-left:2px solid var(--line);position:relative}
+.tl li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl li:last-child{border-color:transparent}
+.tl small{display:block;color:var(--muted)}
+.tl b{font-family:var(--head);font-weight:600}
+
+.cta{background:var(--ink);color:var(--bg);border-radius:24px;padding:64px 32px;text-align:center}
+.cta h2{font-size:clamp(1.8rem,5vw,2.8rem);margin-bottom:12px}
+.cta p{margin:0 auto 28px;max-width:44ch;opacity:.8}
+.cta .btns{justify-content:center}
+.cta .btn{border-color:var(--bg);color:var(--bg)}
+.cta .btn:hover{background:var(--bg);color:var(--ink)}
+.cta .btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;text-align:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b>ชื่อ นามสกุล</b>
+  <a href="#work">ผลงาน</a>
+  <a class="hide" href="#about">เกี่ยวกับฉัน</a>
+  <a href="#contact">ติดต่อ</a>
+</div></nav>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <span class="status">พร้อมเริ่มงานใหม่</span>
+    <h1>ผมสร้างเว็บและแอปที่ใช้งานง่าย</h1>
+    <p>[แก้ไข] สวัสดีครับ ผมชื่อ ชื่อ นามสกุล นักพัฒนาซอฟต์แวร์ที่ชอบเปลี่ยนปัญหาของผู้ใช้ให้เป็นผลิตภัณฑ์ที่ใช้ได้จริง กำลังมองหาตำแหน่ง [Junior Developer / ฝึกงาน]</p>
+    <div class="btns">
+      <a class="btn main" href="#work">ดูผลงาน</a>
+      <a class="btn" href="resume.pdf">ดาวน์โหลดเรซูเม่</a>
+    </div>
+  </div>
+  <!-- ใส่รูปของคุณที่ images/profile.jpg ถ้ายังไม่มีไฟล์ จะแสดงตัวอักษรย่อแทน -->
+  <div class="avatar"><img src="images/profile.jpg" alt="รูปของ ชื่อ นามสกุล" onerror="this.remove()">ช</div>
+</div>
+
+<section id="work"><div class="wrap">
+  <div class="head">
+    <h2>ผลงาน</h2>
+    <div class="chips" role="group" aria-label="กรองผลงาน">
+      <button class="chip" data-f="all" aria-pressed="true">ทั้งหมด</button>
+      <button class="chip" data-f="web" aria-pressed="false">เว็บ</button>
+      <button class="chip" data-f="mobile" aria-pressed="false">มือถือ</button>
+      <button class="chip" data-f="data" aria-pressed="false">ข้อมูล</button>
+    </div>
+  </div>
+  <!-- ภาพหน้าจอ: วางไฟล์ไว้ images/project-1.jpg ... project-4.jpg ถ้ายังไม่มี จะแสดงพื้นสีแทน -->
+  <div class="grid">
+    <a class="card" data-c="web" href="https://github.com/YOUR_USERNAME/project-1">
+      <div class="thumb t1"><span>ภาพหน้าจอโปรเจกต์ 1</span><img src="images/project-1.jpg" alt="" onerror="this.remove()"></div>
+      <div class="info"><h3>ระบบจองห้องประชุม</h3><p>[แก้ไข] ลดเวลาจองห้องจาก 10 นาทีเหลือ 1 นาที ผมรับผิดชอบหน้าเว็บและ API</p>
+      <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul></div>
+    </a>
+    <a class="card" data-c="mobile" href="https://github.com/YOUR_USERNAME/project-2">
+      <div class="thumb t2"><span>ภาพหน้าจอโปรเจกต์ 2</span><img src="images/project-2.jpg" alt="" onerror="this.remove()"></div>
+      <div class="info"><h3>แอปติดตามรายจ่าย</h3><p>[แก้ไข] แอปบันทึกรายจ่ายรายวันพร้อมสรุปรายเดือน มีผู้ทดลองใช้ [จำนวน] คน</p>
+      <ul class="tags"><li>Flutter</li><li>Firebase</li></ul></div>
+    </a>
+    <a class="card" data-c="data" href="https://github.com/YOUR_USERNAME/project-3">
+      <div class="thumb t3"><span>ภาพหน้าจอโปรเจกต์ 3</span><img src="images/project-3.jpg" alt="" onerror="this.remove()"></div>
+      <div class="info"><h3>แดชบอร์ดวิเคราะห์ยอดขาย</h3><p>[แก้ไข] รวบรวมข้อมูลจากหลายแหล่งมาแสดงผลเป็นกราฟที่ดูง่าย</p>
+      <ul class="tags"><li>Python</li><li>Pandas</li><li>Streamlit</li></ul></div>
+    </a>
+    <a class="card" data-c="web" href="https://github.com/YOUR_USERNAME/project-4">
+      <div class="thumb t4"><span>ภาพหน้าจอโปรเจกต์ 4</span><img src="images/project-4.jpg" alt="" onerror="this.remove()"></div>
+      <div class="info"><h3>เว็บไซต์ร้านค้าออนไลน์</h3><p>[แก้ไข] ตะกร้าสินค้า ระบบชำระเงิน และหน้าจัดการสินค้า</p>
+      <ul class="tags"><li>Next.js</li><li>Stripe</li></ul></div>
+    </a>
+  </div>
+</div></section>
+
+<section id="about" style="padding-top:24px"><div class="wrap about">
+  <div>
+    <h3>ทักษะ</h3>
+    <ul class="pills"><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>SQL</li></ul>
+    <ul class="pills"><li>React</li><li>Node.js</li><li>Flutter</li></ul>
+    <ul class="pills"><li>Git</li><li>Docker</li><li>Figma</li></ul>
+  </div>
+  <div>
+    <h3>ประสบการณ์และการศึกษา</h3>
+    <ul class="tl">
+      <li><small>2025 ถึงปัจจุบัน</small><b>[ตำแหน่ง] ที่ [บริษัท]</b><small>[แก้ไข] งานหลักและผลลัพธ์</small></li>
+      <li><small>2024</small><b>ฝึกงาน ที่ [บริษัท]</b><small>[แก้ไข] สิ่งที่ได้ทำและเรียนรู้</small></li>
+      <li><small>2021 ถึง 2025</small><b>ปริญญาตรี [สาขา]</b><small>[มหาวิทยาลัย], GPA [x.xx]</small></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-top:24px"><div class="wrap">
+  <div class="cta">
+    <h2>มาคุยกันครับ</h2>
+    <p>สนใจร่วมงานหรืออยากดูผลงานเพิ่มเติม ส่งข้อความมาได้เลย</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:you@example.com">ส่งอีเมล</a>
+      <a class="btn" href="https://github.com/YOUR_USERNAME">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/YOUR_USERNAME">LinkedIn</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>© 2026 ชื่อ นามสกุล</footer>
+
+<script>
+document.querySelectorAll('.chip').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    document.querySelectorAll('.card').forEach(function(c){c.hidden=!(f==='all'||c.dataset.c===f)});
+  });
+});
+</script>
+</body>
+</html>
